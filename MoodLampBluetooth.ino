@@ -113,7 +113,7 @@ void readBluetooth()
         setValue(j, currentValue);
         hasData = false;
       }
-      else if (hasData && c == '|') // next data
+      else if (hasData && c == ';') // next data
       {
         setValue(j++, currentValue);        
         char currentValue[3];
@@ -129,9 +129,9 @@ void readBluetooth()
 
 void writeBluetooth()
 {
-  String vars = "<";
+  String vars = "@";
   vars += ambientLight;
-  vars += ">";
+  vars += "|";
 
   blu.println(vars);
 }
